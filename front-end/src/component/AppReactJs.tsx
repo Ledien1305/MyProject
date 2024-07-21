@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getWeatherForecast } from '../services/apiSevice';
 
-function App() {
+const AppComponent = () => {
     const [weatherData, setWeatherData] = useState([]);
 
     useEffect(() => {
@@ -33,4 +33,4 @@ function App() {
     );
 }
 
-export default App;
+export default AppComponent;
