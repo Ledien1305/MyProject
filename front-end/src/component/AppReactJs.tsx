@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getWeatherForecast } from '../services/apiSevice';
+import { fetchProducts } from '../services/apiSevice';
 
 const AppComponent = () => {
     const [weatherData, setWeatherData] = useState([]);
@@ -7,7 +7,7 @@ const AppComponent = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getWeatherForecast();
+                const data = await fetchProducts();
                 setWeatherData(data);
             } catch (error) {
                 console.error('Error fetching weather data:', error);

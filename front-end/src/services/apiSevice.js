@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5208';
+const API_URL = 'http://localhost:5000/api/products';
 
-export const getWeatherForecast = async () => {
+export const fetchProducts = async () => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/weatherforecast`);
+    const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
-    console.error('Error fetching weather forecast:', error);
+    console.error('Error fetching products:', error);
     throw error;
   }
 };
