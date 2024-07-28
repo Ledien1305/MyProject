@@ -4,6 +4,7 @@ import Header from '../src/component/Header';
 import ProductList from '../src/component/ProductList';
 import Cart from '../src/component/Card';
 import Checkout from '../src/component/CheckOut';
+import AppComponent from './component/AppReactJs';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
           <Route path="/" element={<ProductList />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route element={<AppComponent />} />
         </Routes>
       </div>
     </Router>
