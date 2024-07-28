@@ -1,21 +1,20 @@
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-namespace MyApi.Controllers
+namespace MyApiProject
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class Program
     {
-        [HttpGet]
-        public IActionResult GetProducts()
+        public static void Main(string[] args)
         {
-            var products = new[]
-            {
-                new { Id = 1, Name = "Product 1", Price = 100 },
-                new { Id = 2, Name = "Product 2", Price = 200 }
-            };
-
-            return Ok(products);
+            CreateHostBuilder(args).Build().Run();
         }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }
